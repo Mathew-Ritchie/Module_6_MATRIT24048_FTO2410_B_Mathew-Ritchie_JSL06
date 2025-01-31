@@ -22,19 +22,24 @@ function displayMenuItems(menu) {
     // Append a list of items element to the menu container
     menuContainer.appendChild(menuItemsUl);
     // Loop through the items in the category and create list items
+    //for (let meal in menu[category]) {
+    //Object.entries(menu).forEach(([course, meals]) => {
+    //meals.forEach((meal) => {
+    menu[category].forEach((meal) => {
+      // Append the category element to the menu container
+      const menuItemsLi = document.createElement("li");
+      // Append the category element to the menu container
+      menuContainer.appendChild(menuItemsUl);
+      // Set the text content of the list item element to the item name
+      menuItemsLi.textContent = meal;
+      // Attach a click event listener to the list item to add it to the order
+      //menuItemsLi.addEventListener("click");
+      // Append the list item to the list of items
+      menuItemsUl.appendChild(menuItemsLi);
+    });
   }
-  for (let meal in menu[meals]) {
-    // Append the category element to the menu container
-    const menuItemsLi = document.createElement("li");
-    // Append the category element to the menu container
-    menuContainer.appendChild(menuItemsUl);
-    // Set the text content of the list item element to the item name
-    menuItemsLi.textContent = `${meal}`;
-    // Attach a click event listener to the list item to add it to the order
-    menuItemsLi.addEventListener("click");
-    // Append the list item to the list of items
-    menuItemsUl.appendChild(menuItemsLi);
-  }
+
+  console.log(menu);
 }
 
 displayMenuItems(menu);
