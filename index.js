@@ -27,12 +27,8 @@ function displayMenuItems(menu) {
       menuContainer.appendChild(menuItemsUl);
       menuItemsLi.textContent = meal;
       menuItemsLi.addEventListener("click", () => addToOrder(meal));
-      menuItemsLi.addEventListener("mouseover", () => {
-        menuItemsLi.style.color = "red";
-      });
-      menuItemsLi.addEventListener("mouseout", () => {
-        menuItemsLi.style.color = "black";
-      });
+      menuItemsLi.addEventListener("mouseover", () => (menuItemsLi.style.color = "red"));
+      menuItemsLi.addEventListener("mouseout", () => (menuItemsLi.style.color = "black"));
       menuItemsUl.appendChild(menuItemsLi);
     });
   }
